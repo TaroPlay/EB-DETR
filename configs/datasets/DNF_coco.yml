@@ -1,0 +1,22 @@
+metric: COCO
+#记得更改种类数量，不然会发生CUDA报错
+num_classes: 3
+
+TrainDataset:
+  name: COCODataSet
+  image_dir: images/train2021
+  anno_path: annotations/train2021.json
+  dataset_dir: dataset/dnf_coco
+  data_fields: ['image', 'gt_bbox', 'gt_class', 'is_crowd']
+
+EvalDataset:
+  name: COCODataSet
+  image_dir: images/val2021
+  anno_path: annotations/val2021.json
+  dataset_dir: dataset/dnf_coco
+  allow_empty: true
+
+TestDataset:
+  name: ImageFolder
+  anno_path: annotations/label_list.txt # also support txt (like VOC's label_list.txt)
+  dataset_dir: dataset/dnf_coco # if set, anno_path will be 'dataset_dir/anno_path'

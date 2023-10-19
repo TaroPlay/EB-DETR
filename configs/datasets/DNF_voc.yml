@@ -1,0 +1,25 @@
+metric: VOC
+#integral or 11point
+map_type: 11point
+#3种标签
+num_classes: 3
+
+TrainDataset:
+  name: VOCDataSet
+  #绝对路径
+  dataset_dir: /root/zyj/paddle/RT-DETR-main/rtdetr_paddle/dataset/DNF_voc
+  anno_path: train.txt
+  label_list: label_list.txt
+  data_fields: ['image', 'gt_bbox', 'gt_class', 'difficult']
+
+EvalDataset:
+  name: VOCDataSet
+  #绝对路径
+  dataset_dir: /root/zyj/paddle/RT-DETR-main/rtdetr_paddle/dataset/DNF_voc
+  anno_path: val.txt
+  label_list: label_list.txt
+  data_fields: ['image', 'gt_bbox', 'gt_class', 'difficult']
+
+TestDataset:
+  name: ImageFolder
+  anno_path: dataset/voc/label_list.txt

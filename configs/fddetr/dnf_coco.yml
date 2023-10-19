@@ -1,0 +1,11 @@
+_BASE_: [
+  '../datasets/DNF_coco.yml',
+  '../runtime.yml',
+  '_base_/optimizer_6x.yml',
+  '_base_/fddetr_r50vd.yml',
+  '_base_/fddetr_reader.yml',
+]
+
+weights: dnfcoco
+find_unused_parameters: True
+log_iter: 20
